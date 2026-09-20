@@ -1,0 +1,7 @@
+# Claude Code local settings (machine-specific, should not be committed)
+.claude/
+
+# OS junk
+.DS_Store
+Thumbs.db
+Desktop.ini
