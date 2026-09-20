@@ -34,11 +34,11 @@
       const tags = (paper[language === 'zh' ? 'tagsZh' : 'tags'] || paper.tags).map((tag) => `<span class="tag">${escaped(tag)}</span>`).join('');
       return `<article class="publication"><div class="publication-year">${escaped(paper.year)}</div><div><h3>${escaped(paper[language === 'zh' ? 'titleZh' : 'title'] || paper.title)}</h3><p class="publication-meta">${escaped(paper[language === 'zh' ? 'authorsZh' : 'authors'] || paper.authors)} · ${escaped(paper[language === 'zh' ? 'venueZh' : 'venue'] || paper.venue)}</p><p class="publication-abstract">${escaped(paper[language === 'zh' ? 'abstractZh' : 'abstract'] || paper.abstract)}</p><div class="tag-list">${tags}</div></div><div class="paper-actions">${documentButtons(paper.file, paper.available)}</div></article>`;
     }).join('');
-    q('#resume-filename').textContent = data.resume.filename;
-    q('#resume-actions').innerHTML = documentButtons(data.resume.file, data.resume.available);
+    // q('#resume-filename').textContent = data.resume.filename;
+    // q('#resume-actions').innerHTML = documentButtons(data.resume.file, data.resume.available);
     q('#social-links').innerHTML = data.person.socials.filter((item) => item.url).map((item) => `<a href="${escaped(item.url)}" target="_blank" rel="noreferrer">${escaped(item.label)} ↗</a>`).join('');
-    const portrait = q('#portrait');
-    if (data.person.portrait) { portrait.classList.add('has-image'); portrait.style.backgroundImage = `url('${data.person.portrait}')`; }
+    // const portrait = q('#portrait');
+    // if (data.person.portrait) { portrait.classList.add('has-image'); portrait.style.backgroundImage = `url('${data.person.portrait}')`; }
   }
   render();
   q('.language-toggle').addEventListener('click', () => { language = language === 'zh' ? 'en' : 'zh'; render(); });
